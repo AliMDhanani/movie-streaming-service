@@ -1,9 +1,28 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { HiOutlineSearch, HiBell } from "react-icons/hi";
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); //only run when header is mounting
+
   return (
-    <header>
+    <header className={`${isScrolled && "bg-[#141414]"}`}>
       <div className="flex items-center space-x-2 md:space-x-10">
         <img
           src="https://fontmeme.com/permalink/221018/7a8bf8a66c33bd9f6922f5ed5d88126f.png"
@@ -22,9 +41,13 @@ const Header = () => {
       <div className="flex items-center space-x-4 text-sm font-light">
         <HiOutlineSearch className="hidden h-6 w-6 sm:inline text-white font-extrabold" />
         <p className="hidden lg:inline text-white">Kids</p>
-        <HiBell className="h-6 w-6 text-white font-extrabold"/>
+        <HiBell className="h-6 w-6 text-white font-extrabold" />
         <Link href="/account">
-            <img src="https://www.svgrepo.com/show/170303/avatar.svg" alt="" className="cursor-pointer rounded h-10 w-10" />
+          <img
+            src="https://www.svgrepo.com/show/170303/avatar.svg"
+            alt=""
+            className="cursor-pointer rounded h-10 w-10"
+          />
         </Link>
       </div>
     </header>
