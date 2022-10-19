@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { baseUrl } from "../constants/movie";
 import { FaPlay } from "react-icons/fa";
 import { HiInformationCircle } from "react-icons/hi";
+import { Movie } from "../typings";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -40,7 +41,10 @@ const Banner = ({ netflixOriginals }: Props) => {
         <button className="button__banner bg-white text-black">
           <FaPlay className="h-4 w-4 text-black md:h-7 md:w-7" /> Play
         </button>
-        <button className="button__banner bg-[gray]/50"><HiInformationCircle className="h-5 w-5 md:h-8 md:w-8" />More Info</button>
+        <button className="button__banner bg-[gray]/50">
+          <HiInformationCircle className="h-5 w-5 md:h-8 md:w-8" />
+          More Info
+        </button>
       </div>
     </div>
   );
