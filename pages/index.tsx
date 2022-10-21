@@ -31,7 +31,7 @@ const Home = ({
       className="relative h-screen bg-gradient-to-b lg:h-[140vh]"
     >
       <Head>
-        <title>FLIX4U</title>
+        <title>Home - FLIX4U</title>
         <link rel="icon" href="/logo.ico" />
       </Head>
       <Header />
