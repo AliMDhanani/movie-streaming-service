@@ -24,7 +24,7 @@ const Row = ({ title, movies }: Props) => {
           ? scrollLeft - clientWidth
           : scrollLeft + clientWidth
       
-      rowRef.current.scrollTo({left: scrollTo, behavior: "smooth"})
+      rowRef.current.scrollTo({left: scrollTo, behavior: "smooth"}) // registering scroll behaviour => scrolls one entire size of screen
     }
   };
 
@@ -32,7 +32,7 @@ const Row = ({ title, movies }: Props) => {
     <div className="h-40 space-y-0.5 md:space-y-2">
       <h2
         className="w-56 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition
-      duration-200 hover:text-white md:text-2xl"
+      duration-200 hover:text-white md:text-2xl" 
       >
         {title}
       </h2>
@@ -40,7 +40,7 @@ const Row = ({ title, movies }: Props) => {
         <HiChevronLeft
           className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-0 text-white 
           transition hover:scale-125 group-hover:opacity-100 ${!isMoved && "hidden"}`}
-          onClick={() => handleClick("left")}
+          onClick={() => handleClick("left")} //until ismoved is true left chevron arrow stays hidden => for carousel funciton
         />
 
         <div
@@ -48,7 +48,7 @@ const Row = ({ title, movies }: Props) => {
           className="flex scrollbar-hide items-center space-x-0.5 md:space-x-2.5 md:p-2 overflow-x-scroll"
         >
           {movies.map((movie) => (
-            <Thumbnail key={movie.id} movie={movie} />
+            <Thumbnail key={movie.id} movie={movie} /> //mapping through the movie data from  tmdb => addressed in typings.
           ))}
         </div>
 
