@@ -32,7 +32,7 @@ const Home = ({
     >
       <Head>
         <title>Home - FLIX4U</title>
-        <link rel="icon" href="/logo.ico" />
+        <link rel="icon" href="/flix4ulogo.ico" />
       </Head>
       <Header />
       <main className="relative pl-4 lg:space-y-24 lg:pl-16">

@@ -55,13 +55,14 @@ const Login = () => {
               type="email"
               placeholder="Email"
               className="input"
-              {...register("email", { required: true })}
+              {...register("email", { required: true })} /*including validation w/ required or other HTML validation rules */
             />
             {errors.email && (
-              <p className="p-1 text-[13px] font-light  text-orange-500">
+              <p className="p-1 text-[13px] font-light  text-orange-500"> 
                 Please enter a valid email.
               </p>
             )}
+            {/* error message will be required when validation rules are not met */}
           </label>
           <label className="inline-block w-full">
             <input
