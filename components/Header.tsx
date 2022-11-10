@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HiOutlineSearch, HiBell } from "react-icons/hi";
+import useAuth from "../hooks/useAuth";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { logout } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,13 +44,14 @@ const Header = () => {
         <HiOutlineSearch className="hidden h-6 w-6 sm:inline text-white font-extrabold" />
         <p className="hidden lg:inline text-white">Kids</p>
         <HiBell className="h-6 w-6 text-white font-extrabold" />
-        <Link href="/account">
+        {/* <Link href="/account"> */}
           <img
+            onClick={logout}
             src="https://www.svgrepo.com/show/170303/avatar.svg"
             alt=""
             className="cursor-pointer rounded h-10 w-10"
           />
-        </Link>
+        {/* </Link> */}
       </div>
     </header>
   );

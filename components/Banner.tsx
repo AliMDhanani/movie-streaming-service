@@ -18,8 +18,6 @@ const Banner = ({ netflixOriginals }: Props) => {
     );
   }, [netflixOriginals]); // gets a random number every time state of netflix originals changes
 
-  console.log(movie);
-
   return (
     <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
       <div className="absolute top-0 left-0 h-[95vh] w-screen -z-10">
