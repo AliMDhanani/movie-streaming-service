@@ -34,4 +34,9 @@
     bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10;
   }
 
+  .planContainer {
+    @apply relative mx-1.5 flex h-80 bg-[#0970e5] w-[calc(100%/3)] cursor-default items-center justify-center rounded-sm font-semibold shadow 
+    after:absolute after:top-full after:left-1/2 after:block after:-translate-x-1/2 
+    after:border-8 after:border-b-0 after:border-transparent after:border-t-[#0970e5] after:content-[""] md:h-32 lg:mx-8;
+  }
 }
