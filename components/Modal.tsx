@@ -122,6 +122,7 @@ const Modal = () => {
                   <span className="text-[gray]">Genres: </span>
                   {genres?.map((genre) => genre.name).join(', ')}
                 </div>
+
                 <div>
                   <span className="text-[gray]">Original Language: </span>
                   {movie?.original_language}

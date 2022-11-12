@@ -42,7 +42,6 @@ const Header = () => {
       </div>
       <div className="flex items-center space-x-4 text-sm font-light">
         <HiOutlineSearch className="hidden h-6 w-6 sm:inline text-white font-extrabold" />
-        <p className="hidden lg:inline text-white">Kids</p>
         <HiBell className="h-6 w-6 text-white font-extrabold" />
         {/* <Link href="/account"> */}
           <img
