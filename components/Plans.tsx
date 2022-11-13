@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { HiCheck } from "react-icons/hi";
 import useAuth from "../hooks/useAuth";
+import Table from "./Table";
 
 interface Props {
   products: Product[];
@@ -62,7 +63,7 @@ const Plans = ({ products }: Props) => {
             ))}
           </div>
 
-          {/* Table */}
+          <Table products={products}/>
 
           <button>Subscribe</button>
         </div>
