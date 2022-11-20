@@ -1,10 +1,11 @@
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
 import useSubscription from "../hooks/useSubscription";
+import { userBillingPortal } from "../library/stripe";
 import Loader from "./Loader";
 
 const Membership = () => {
-  const { user } = useAuth;
+  const {user} = useAuth()
   const subscription = useSubscription(user);
   const [isBillingLoading, setBillingLoading] = useState(false);
 
@@ -12,7 +13,7 @@ const Membership = () => {
   const manageSubscription = () => {
     if (subscription) {
         setBillingLoading(true)
-        // goToBillingPortal()
+        userBillingPortal()
     }
   }
 

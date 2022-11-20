@@ -20,5 +20,20 @@ const loadCheckout = async (priceId: string) => {
     .catch((error) => console.log(error.message));
 };
 
-export { loadCheckout }
-export default payments
+const userBillingPortal = async () => {
+  const instance = getFunctions(app, "europe-west2");
+  //return reference to https trigger - return back url which is redirecting user to customer portal according to cloud functions ref
+  const functionRef = httpsCallable(
+    instance,
+    "ext-firestore-stripe-payments-createPortalLink"
+  );
+
+  await functionRef({
+    returnUrl: `${window.localStorage.origin}/account`,
+  })
+    .then(({ data }: any) => window.location.assign(data.url))
+    .catch((error) => console.log(error.message));
+};
+
+export { loadCheckout, userBillingPortal };
+export default payments;
