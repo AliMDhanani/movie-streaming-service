@@ -9,7 +9,7 @@ import Loader from "./Loader";
 import Table from "./Table";
 
 interface Props {
-  products: Product[];
+  products: Product[]
 }
 
 const Plans = ({ products }: Props) => {
